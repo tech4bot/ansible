@@ -1,0 +1,6 @@
+[master]
+server1
+
+[slave]
+server2
+server3
