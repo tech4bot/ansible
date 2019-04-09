@@ -6,18 +6,18 @@ sudo apt update
 sudo apt install ansible -y
 
 ## ssh to servers without pass:
-### generate key
-ssh-keygen
-### copy key to server
-ssh-copy-id ansible@server1
-### create ansible user
+### create ansible user(run on all servers)
 sudo adduser ansible
-### grant sudo
+### grant sudo (run on all servers)
 usermod -aG sudo username
 sudo visudo
 *add to the end of file:*
 * allow deployment without asking for password  *
 ansible ALL=(ALL) NOPASSWD:ALL
+### generate key (run only from source)
+ssh-keygen
+### copy key to server (run only from source)
+ssh-copy-id ansible@server1
 
 ----
 ### create new role:
@@ -26,5 +26,3 @@ ansible-galaxy init *role*
 ----
 ### run playbook:
 ansible-playbook -i inventories/test_env/hosts playbook.yml
-
-
