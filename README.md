@@ -16,12 +16,14 @@ sudo adduser ansible
 usermod -aG sudo username
 sudo visudo
 *add to the end of file:*
-### allow deployment without asking for password  
+* allow deployment without asking for password  *
 ansible ALL=(ALL) NOPASSWD:ALL
 
+----
 ### create new role:
 ansible-galaxy init *role*
 
+----
 ### run playbook:
 ansible-playbook -i inventories/test_env/hosts playbook.yml
 
