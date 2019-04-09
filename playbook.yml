@@ -1,0 +1,7 @@
+---
+- hosts: master
+  become: true
+  tags: master
+  roles:
+     - nginx
+  

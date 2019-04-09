@@ -1,0 +1,6 @@
+---
+# tasks file for nginx
+- name: Update repositories cache and install nginx
+  apt:
+    name: nginx
+    update_cache: yes
