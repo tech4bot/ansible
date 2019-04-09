@@ -2,9 +2,8 @@
 
 ## install ansible on Debian:
 sudo apt update
-sudo apt install ansible
 
-------
+sudo apt install ansible
 
 ## ssh to servers without pass:
 ### generate key
@@ -16,9 +15,9 @@ sudo adduser ansible
 ### grant sudo
 usermod -aG sudo username
 sudo visudo
-    *add to the end of file:*
-           ### allow deployment without asking for password  
-           ansible ALL=(ALL) NOPASSWD:ALL
+*add to the end of file:*
+### allow deployment without asking for password  
+ansible ALL=(ALL) NOPASSWD:ALL
 
 
 ------
@@ -27,7 +26,7 @@ sudo visudo
 ansible-galaxy init *role*
 
 ### run playbook:
-ansible-playbook -i inventories/test_env/hosts test.yml
+ansible-playbook -i inventories/test_env/hosts playbook.yml
 
 ------
 
