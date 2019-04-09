@@ -11,8 +11,8 @@ sudo adduser ansible
 ### grant sudo (run on all servers)
 usermod -aG sudo username
 sudo visudo
-*add to the end of file:*
-* allow deployment without asking for password  *
+>add to the end of file:
+
 ansible ALL=(ALL) NOPASSWD:ALL
 ### generate key (run only from source)
 ssh-keygen
