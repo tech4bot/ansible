@@ -1,27 +1,32 @@
-# How to use ansible
+# Basic ansible use
 
-# install ansible on Debian:
+## install ansible on Debian:
 sudo apt update
 sudo apt install ansible
 
 ------
 
-# ssh to servers without pass:
-ssh-keygen - generate key
-ssh-copy-id ansible@server1 - copy key to server
-sudo adduser ansible - create ansible user
-usermod -aG sudo username - grant sudo
+## ssh to servers without pass:
+### generate key
+ssh-keygen
+### copy key to server
+ssh-copy-id ansible@server1
+### create ansible user
+sudo adduser ansible
+### grant sudo
+usermod -aG sudo username
 sudo visudo
-    add to the end of file:  
-           ansible ALL=(ALL) NOPASSWD:ALL - allow deployment without asking for password
+    *add to the end of file:*
+           ### allow deployment without asking for password  
+           ansible ALL=(ALL) NOPASSWD:ALL
 
 
 ------
 
-# create new role:
+### create new role:
 ansible-galaxy init *role*
 
-# run playbook:
+### run playbook:
 ansible-playbook -i inventories/test_env/hosts test.yml
 
 ------
